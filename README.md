@@ -32,6 +32,18 @@ Next you should add the routes to the sitemap.
 $sitemap->add(Url::create(route("main.index")));
 ```
 
+You can pass url attributes to url
+
+```php
+$sitemap->add(
+	Url::create(route('home'))
+		->setLastModificationDate('2023-02-05T22:43:14.000000Z')
+		->setChangeFrequency('weekly')
+		->setPriority(0.6)
+	);
+```
+
+
 ## Save the sitemap
 After adding all the routes you want in the sitemap, you should save it in a file.
 ```php
